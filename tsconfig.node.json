@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "@fontsource/playfair-display/400.css";
+@import "@fontsource/playfair-display/400-italic.css";
+@import "@fontsource/playfair-display/700.css";
+@import "@fontsource/lato/300.css";
+@import "@fontsource/lato/400.css";
+@import "@fontsource/lato/700.css";
+
+/* Cavalli Club Design System - Art Deco Luxury with Copper & Cream */
+
+@layer base {
+  :root {
+    /* Light theme - Cream & Copper */
+    --background: 35 30% 95%;
+    --foreground: 30 25% 15%;
+
+    --card: 35 25% 98%;
+    --card-foreground: 30 25% 15%;
+
+    --popover: 35 25% 98%;
+    --popover-foreground: 30 25% 15%;
+
+    --primary: 25 75% 45%;
+    --primary-foreground: 35 30% 98%;
+
+    --secondary: 30 20% 88%;
+    --secondary-foreground: 30 25% 20%;
+
+    --muted: 30 15% 90%;
+    --muted-foreground: 30 15% 45%;
+
+    --accent: 30 70% 50%;
+    --accent-foreground: 35 30% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 35 30% 98%;
+
+    --border: 30 20% 85%;
+    --input: 30 15% 90%;
+    --ring: 25 75% 45%;
+
+    --radius: 0.25rem;
+
+    /* Custom Cavalli Art Deco tokens */
+    --copper: 25 75% 45%;
+    --copper-light: 30 70% 55%;
+    --copper-dark: 20 60% 35%;
+    --cream: 35 30% 95%;
+    --espresso: 30 25% 20%;
+    --charcoal: 30 15% 15%;
+    
+    /* Typography */
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Lato', system-ui, sans-serif;
+
+    /* Gradients */
+    --gradient-copper: linear-gradient(135deg, hsl(20, 60%, 35%) 0%, hsl(25, 75%, 45%) 50%, hsl(35, 80%, 55%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(35, 25%, 98%) 0%, hsl(35, 30%, 95%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(25, 75%, 45%, 0.1) 0%, transparent 70%);
+
+    /* Shadows & Effects */
+    --shadow-copper: 0 4px 30px hsla(25, 75%, 45%, 0.15);
+    --shadow-deep: 0 20px 60px hsla(0, 0%, 0%, 0.1);
+    --shadow-inner: inset 0 2px 20px hsla(0, 0%, 0%, 0.05);
+
+    --sidebar-background: 35 25% 98%;
+    --sidebar-foreground: 30 25% 15%;
+    --sidebar-primary: 25 75% 45%;
+    --sidebar-primary-foreground: 35 30% 98%;
+    --sidebar-accent: 30 15% 92%;
+    --sidebar-accent-foreground: 30 25% 15%;
+    --sidebar-border: 30 20% 85%;
+    --sidebar-ring: 25 75% 45%;
+  }
+
+  .dark {
+    --background: 30 15% 5%;
+    --foreground: 35 30% 92%;
+    --card: 30 20% 8%;
+    --card-foreground: 35 30% 92%;
+    --popover: 30 20% 10%;
+    --popover-foreground: 35 30% 92%;
+    --primary: 25 75% 55%;
+    --primary-foreground: 30 15% 5%;
+    --secondary: 30 25% 18%;
+    --secondary-foreground: 35 30% 92%;
+    --muted: 30 15% 12%;
+    --muted-foreground: 30 15% 55%;
+    --accent: 35 80% 65%;
+    --accent-foreground: 30 15% 5%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 35 30% 92%;
+    --border: 25 30% 20%;
+    --input: 30 20% 15%;
+    --ring: 25 75% 55%;
+    
+    /* Custom Cavalli Art Deco tokens - dark */
+    --copper: 25 75% 55%;
+    --copper-light: 30 70% 65%;
+    --copper-dark: 20 60% 40%;
+    --cream: 35 30% 92%;
+    --espresso: 30 25% 12%;
+    --charcoal: 30 15% 8%;
+
+    /* Gradients - dark */
+    --gradient-copper: linear-gradient(135deg, hsl(20, 60%, 40%) 0%, hsl(25, 75%, 55%) 50%, hsl(35, 80%, 65%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(30, 20%, 8%) 0%, hsl(30, 15%, 5%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(25, 75%, 55%, 0.15) 0%, transparent 70%);
+
+    /* Shadows & Effects - dark */
+    --shadow-copper: 0 4px 30px hsla(25, 75%, 55%, 0.2);
+    --shadow-deep: 0 20px 60px hsla(0, 0%, 0%, 0.6);
+    --shadow-inner: inset 0 2px 20px hsla(0, 0%, 0%, 0.3);
+
+    --sidebar-background: 30 20% 8%;
+    --sidebar-foreground: 35 30% 92%;
+    --sidebar-primary: 25 75% 55%;
+    --sidebar-primary-foreground: 30 15% 5%;
+    --sidebar-accent: 30 15% 15%;
+    --sidebar-accent-foreground: 35 30% 92%;
+    --sidebar-border: 25 30% 20%;
+    --sidebar-ring: 25 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .menu-item-line::before {
+    content: "";
+    position: absolute;
+    bottom: 6px;
+    left: 0;
+    right: 100%;
+    border-bottom: 1px dotted hsl(var(--muted));
+    animation: expandLine 0.6s ease-out forwards;
+  }
+
+  .section-divider {
+    @apply relative;
+  }
+
+  .section-divider::after {
+    content: "";
+    @apply absolute bottom-0 left-0 right-0 h-px;
+    background: linear-gradient(90deg, transparent, hsl(var(--gold-dim)), transparent);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+
+  .text-gold-dim {
+    color: hsl(var(--gold-dim));
+  }
+
+  .border-gold {
+    border-color: hsl(var(--gold));
+  }
+
+  .border-gold-dim {
+    border-color: hsl(var(--gold-dim));
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .shadow-deep {
+    box-shadow: var(--shadow-deep);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--gold)) 0%,
+    hsl(var(--gold-glow)) 50%,
+    hsl(var(--gold)) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Hide scrollbar for category nav */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
